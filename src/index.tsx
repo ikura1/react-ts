@@ -3,17 +3,18 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 
 type SquareState = "O" | "X" | null;
-type Squares = Array<SquareState>;
+
+type BoardState = Array<SquareState>;
 
 type BoardProps = {
-  squares: Squares;
+  squares: BoardState;
   onClick: (i: number) => void;
 };
 
 type GameProps = {};
 
 type GameState = {
-  history: Array<{ squares: Squares }>;
+  history: Array<{ squares: BoardState }>;
   stepNumber: number;
   xIsNext: boolean;
 };
@@ -144,7 +145,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(<Game />);
 
-function calculateWinner(squares: Squares) {
+function calculateWinner(squares: BoardState) {
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
