@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
-type Squares = Array<string | null>;
+type SquareState = "O" | "X" | null;
+type Squares = Array<SquareState>;
 
 type BoardProps = {
   squares: Squares;
@@ -18,7 +19,7 @@ type GameState = {
 };
 
 type SquareProps = {
-  value: string | null;
+  value: SquareState;
   onClick: () => void;
 };
 
