@@ -9,11 +9,6 @@ type BoardProps = {
   onClick: (i: number) => void;
 };
 
-type BoardState = {
-  squares: Squares;
-  xIsNext: boolean;
-};
-
 type GameProps = {};
 
 type GameState = {
